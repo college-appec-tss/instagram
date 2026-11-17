@@ -4,30 +4,133 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="PhotoShare educational photo-sharing website demo.">
-  <title>PhotoShare - Login</title>
+
+  <meta name="description"
+        content="PhotoShare is a photo-sharing demo where you can explore photos and connect with friends.">
+
+  <title>PhotoShare - Share Your Moments</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="login-body">
-  <main class="login-container">
-    <section class="login-card">
-      <h1 class="logo">PhotoShare</h1>
-      <p>Share your moments with friends.</p>
 
-      <form id="loginForm">
-        <input id="username" placeholder="Demo username" required>
-        <input id="password" type="password"
-               placeholder="Demo password" required>
-        <button type="submit">Log in</button>
-      </form>
+<body>
 
-      <p id="message"></p>
-      <p class="demo-info">
-        Demo username: demo<br>
-        Demo password: photoshare
-      </p>
+  <main class="page">
+
+    <!-- Left side: Photo showcase -->
+    <section class="showcase">
+
+      <div class="brand">
+        <h1>PhotoShare</h1>
+        <p>Capture life. Share moments.</p>
+      </div>
+
+      <div class="photo-grid">
+
+        <img
+          src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500"
+          alt="Portrait photography"
+          class="photo photo1">
+
+        <img
+          src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=500"
+          alt="Beautiful landscape"
+          class="photo photo2">
+
+        <img
+          src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=500"
+          alt="Travel photography"
+          class="photo photo3">
+
+        <img
+          src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=500"
+          alt="Beautiful flowers"
+          class="photo photo4">
+
+        <img
+          src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=500"
+          alt="Portrait of a woman"
+          class="photo photo5">
+
+        <img
+          src="https://images.unsplash.com/photo-1500534623283-312aade485b7?w=500"
+          alt="Nature photography"
+          class="photo photo6">
+
+      </div>
+
+      <div class="showcase-text">
+        <h2>Discover beautiful moments.</h2>
+        <p>Explore photography, share your experiences and connect with people.</p>
+      </div>
+
     </section>
+
+
+    <!-- Right side: Login -->
+    <section class="login-section">
+
+      <div class="login-card">
+
+        <h1 class="mobile-logo">PhotoShare</h1>
+
+        <h2>Welcome back</h2>
+
+        <p class="subtitle">
+          Log in to continue sharing your moments.
+        </p>
+
+        <form id="loginForm">
+
+          <input
+            type="text"
+            id="username"
+            placeholder="Username"
+            autocomplete="username"
+            required>
+
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            autocomplete="current-password"
+            required>
+
+          <button type="submit">Log in</button>
+
+        </form>
+
+        <p id="message"></p>
+
+        <div class="separator">
+          <span>OR</span>
+        </div>
+
+        <a href="#" class="forgot">
+          Forgot password?
+        </a>
+
+        <div class="signup">
+          Don't have an account?
+          <a href="#">Sign up</a>
+        </div>
+
+      </div>
+
+      <div class="download">
+        Experience PhotoShare on every device.
+      </div>
+
+      <footer>
+        <p>About · Privacy · Terms · Help</p>
+        <p>© 2026 PhotoShare</p>
+      </footer>
+
+    </section>
+
   </main>
+
   <script src="script.js"></script>
+
 </body>
 </html>
