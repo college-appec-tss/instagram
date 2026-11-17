@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PhotoShare - Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1 class="logo">PhotoShare</h1>
+    <a href="index.html" onclick="logout()">Logout</a>
+  </header>
+
+  <main class="homepage">
+    <section class="stories">
+      <h3>Stories</h3>
+      <div class="story-list">
+        <img src="https://i.pravatar.cc/100?img=12" alt="Story">
+        <img src="https://i.pravatar.cc/100?img=32" alt="Story">
+        <img src="https://i.pravatar.cc/100?img=5" alt="Story">
+        <img src="https://i.pravatar.cc/100?img=47" alt="Story">
+      </div>
+    </section>
+
+    <section class="feed">
+      <article class="post">
+        <h3>maya.jpg</h3>
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800" alt="Nature">
+        <button onclick="likePost(this)">♡ Like</button>
+        <p>Enjoying beautiful moments! 🌍</p>
+      </article>
+
+      <article class="post">
+        <h3>alex_r</h3>
+        <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=800" alt="Mountain">
+        <button onclick="likePost(this)">♡ Like</button>
+        <p>Nature is amazing!</p>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
