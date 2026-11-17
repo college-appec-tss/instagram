@@ -11,12 +11,7 @@ if (loginForm) {
     const password =
       document.getElementById("password").value;
 
-      if(usename && pass){
-
-
-      window.location.href="home.html";
-
-
+      window.alert("you enetred" +password);
 
 
 
