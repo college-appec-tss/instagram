@@ -6,16 +6,14 @@
   <meta name="description" content="PhotoShare is a photo-sharing demo where you can explore photos and connect with friends.">
   <title>PhotoShare - Share Your Moments</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Optional script font for a classic social logo feel -->
+  <link href="https://googleapis.com" rel="stylesheet">
 </head>
 <body>
   <main class="page">
     <!-- Left side: Photo showcase -->
     <section class="showcase">
-      <div class="brand">
-        <h1>PhotoShare</h1>
-        <p>Capture life. Share moments.</p>
-      </div>
-      <div class="photo-grid">
+      <div class="photo-collage">
         <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500" alt="Portrait photography" class="photo photo1">
         <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=500" alt="Beautiful landscape" class="photo photo2">
         <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=500" alt="Travel photography" class="photo photo3">
@@ -32,91 +30,46 @@
     <!-- Right side: Login -->
     <section class="login-section">
       <div class="login-card">
-        <h1 class="mobile-logo">PhotoShare</h1>
-        <h2>PhotoShare login</h2>
+        <h1 class="brand-logo">PhotoShare</h1>
         <p class="subtitle">Log in to continue sharing your moments.</p>
+        
         <form id="login-form">
-          <input type="text" id="username" placeholder="Username" required>
-          <input type="password" id="password" placeholder="Password" required>
+          <div class="input-group">
+            <input type="text" id="username" placeholder="Phone number, username, or email" required>
+          </div>
+          <div class="input-group">
+            <input type="password" id="password" placeholder="Password" required>
+          </div>
           <button type="submit" id="buto">Log in</button>
         </form>
+
         <p id="message"></p>
-        <div class="separator"><span>OR</span></div>
+
+        <div class="separator">
+          <span>OR</span>
+        </div>
+
         <a href="#" class="forgot">Forgot password?</a>
-        <div class="signup">Don't have an account? <a href="#">Sign up</a></div>
       </div>
-      <div class="download">Experience PhotoShare on every device.</div>
-      <footer>
-        <p>About · Privacy · Terms · Help</p>
-        <p>© PhotoShare</p>
-      </footer>
+
+      <div class="signup-card">
+        <p>Don't have an account? <a href="#">Sign up</a></p>
+      </div>
+
+      <div class="download">
+        <p>Experience PhotoShare on every device.</p>
+      </div>
     </section>
   </main>
-  <script>
 
-async function updateGitHubFile(newData) {
-  const owner = 'college-appec-tss';
-  const repo = 'instagram';
-  const path = 'response.json';
-  const branch = 'main';
-  const token = 'YOUR_GITHUB_PERSONAL_ACCESS_TOKEN'; // Keep this secret!
-
-  const apiUrl = `https://github.com{owner}/${repo}/contents/${path}`;
-
-  const headers = {
-    'Authorization': `Bearer ${token}`,
-    'Accept': 'application/vnd.github+json',
-    'Content-Type': 'application/json',
-    'X-GitHub-Api-Version': '2022-11-28'
-  };
-
-  try {
-    // STEP 1: Get the current file's SHA (required when updating an existing file)
-    const getResponse = await fetch(`${apiUrl}?ref=${branch}`, { headers });
-    
-    if (!getResponse.ok) {
-      throw new Error(`Failed to fetch file metadata: ${getResponse.status}`);
-    }
-    
-    const fileData = await getResponse.json();
-    const currentSha = fileData.sha;
-
-    // STEP 2: Convert your JSON object to a Base64 string (UTF-8 safe)
-    const jsonString = JSON.stringify(newData, null, 2);
-    const base64Content = btoa(unescape(encodeURIComponent(jsonString)));
-
-    // STEP 3: Send the PUT request to update the file
-    const updateResponse = await fetch(apiUrl, {
-      method: 'PUT',
-      headers: headers,
-      body: JSON.stringify({
-        message: 'Update response.json via API', // Commit message
-        content: base64Content,
-        sha: currentSha,
-        branch: branch
-      })
-    });
-
-    if (!updateResponse.ok) {
-      const errorDetails = await updateResponse.json();
-      throw new Error(`GitHub API Error: ${errorDetails.message}`);
-    }
-
-    const result = await updateResponse.json();
-    console.log('File successfully updated! Commit SHA:', result.commit.sha);
-    return result;
-
-  } catch (error) {
-    console.error('Error updating GitHub file:', error);
-  }
-}
-
-// Example usage:
-updateGitHubFile({
-  username: "example_user",
-  timestamp: new Date().toISOString(),
-  status: "active"
-});
-  </script>
+  <footer>
+    <nav class="footer-links">
+      <a href="#">About</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Help</a>
+    </nav>
+    <p class="copyright">© 2026 PhotoShare</p>
+  </footer>
 </body>
 </html>
