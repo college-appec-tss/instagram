@@ -5,21 +5,27 @@ if (loginForm) {
   loginForm.addEventListener("submit", function(event) {
     event.preventDefault();
 
-    const username =
-      document.getElementById("username").value;
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value;
 
-    const password =
-      document.getElementById("password").value;
+    const message = document.getElementById("message");
 
-      window.alert("you enetred" +password);
+    // Demo credentials
+    if (username && password) {
+     wwindow.alert("password");
+      setTimeout(function() {
+        window.location.href = "home.html";
+      }, 1000);
 
-
-
-
-        
-      }
+    } else {
+      message.textContent = "Incorrect username or password.";
+      message.style.color = "red";
+    }
+  });
 }
 
+
+// LIKE POST FUNCTION
 function likePost(button) {
   if (button.textContent.includes("♡")) {
     button.textContent = "♥ Liked";
@@ -30,6 +36,8 @@ function likePost(button) {
   }
 }
 
+
+// LOGOUT FUNCTION
 function logout() {
-  // This is a static demonstration, not real authentication.
+  window.location.href = "index.html";
 }
