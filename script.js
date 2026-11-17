@@ -18,7 +18,6 @@ if (loginForm) {
 
         
       }
-  });
 }
 
 function likePost(button) {
