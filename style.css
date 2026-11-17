@@ -1,123 +1,244 @@
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   background: #fafafa;
   color: #262626;
 }
 
-.login-body {
+.page {
   min-height: 100vh;
-  display: grid;
-  place-items: center;
-  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 65px;
+  padding: 35px 20px;
 }
 
-.login-container {
+/* LEFT SHOWCASE */
+
+.showcase {
+  width: 480px;
+}
+
+.brand h1 {
+  font-size: 39px;
+  font-weight: 800;
+  letter-spacing: -2px;
+  color: #833ab4;
+}
+
+.brand p {
+  color: #777;
+  margin-top: 7px;
+  margin-bottom: 25px;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 175px);
+  gap: 9px;
+}
+
+.photo {
   width: 100%;
-  max-width: 350px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s;
+}
+
+.photo:hover {
+  transform: scale(1.04);
+}
+
+.photo1 {
+  grid-row: span 2;
+}
+
+.photo4 {
+  grid-column: span 1;
+}
+
+.showcase-text {
+  margin-top: 28px;
+}
+
+.showcase-text h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.showcase-text p {
+  color: #777;
+  line-height: 1.6;
+  max-width: 400px;
+}
+
+/* LOGIN */
+
+.login-section {
+  width: 390px;
+  text-align: center;
 }
 
 .login-card {
   background: white;
-  border: 1px solid #ddd;
-  padding: 35px 25px;
-  text-align: center;
+  border: 1px solid #e5e5e5;
+  padding: 40px 35px;
+  border-radius: 12px;
 }
 
-.logo {
-  font-family: Georgia, serif;
-  font-size: 34px;
+.mobile-logo {
+  display: none;
 }
 
-.login-card input {
+.login-card h2 {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 27px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input {
   width: 100%;
-  padding: 13px;
-  margin: 5px 0;
-  border: 1px solid #ddd;
+  height: 46px;
   background: #fafafa;
+  border: 1px solid #dbdbdb;
+  border-radius: 6px;
+  padding: 0 13px;
+  font-size: 14px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #833ab4;
 }
 
 button {
-  cursor: pointer;
-}
-
-.login-card button {
-  width: 100%;
-  padding: 12px;
-  background: #0095f6;
-  color: white;
+  height: 43px;
   border: none;
-  border-radius: 5px;
-  margin-top: 12px;
+  border-radius: 7px;
+  background: #833ab4;
+  background-image: linear-gradient(
+    90deg,
+    #833ab4,
+    #c13584,
+    #e1306c
+  );
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 5px;
 }
 
-.demo-info {
-  font-size: 12px;
-  color: #777;
-  line-height: 1.8;
+button:hover {
+  opacity: 0.9;
 }
 
-.topbar {
-  height: 65px;
-  background: white;
-  border-bottom: 1px solid #ddd;
+.separator {
   display: flex;
-  justify-content: space-around;
   align-items: center;
+  gap: 15px;
+  margin: 25px 0;
+  color: #999;
+  font-size: 12px;
+  font-weight: bold;
 }
 
-.topbar a {
-  color: #0095f6;
+.separator::before,
+.separator::after {
+  content: "";
+  height: 1px;
+  background: #ddd;
+  flex: 1;
+}
+
+.forgot {
+  color: #555;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.signup {
+  border-top: 1px solid #eee;
+  margin-top: 30px;
+  padding-top: 22px;
+  font-size: 14px;
+}
+
+.signup a {
+  color: #833ab4;
+  font-weight: bold;
   text-decoration: none;
 }
 
-.homepage {
-  width: 100%;
-  max-width: 650px;
-  margin: 25px auto;
-  padding: 0 12px;
+#message {
+  margin-top: 15px;
+  font-size: 13px;
 }
 
-.stories, .post {
-  background: white;
-  border: 1px solid #ddd;
-  padding: 15px;
-  margin-bottom: 20px;
+.download {
+  margin: 25px 0;
+  font-size: 13px;
+  color: #777;
 }
 
-.story-list {
-  display: flex;
-  gap: 15px;
+footer {
+  font-size: 12px;
+  color: #999;
+  line-height: 2;
 }
 
-.story-list img {
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  border: 3px solid #e1306c;
+/* MOBILE */
+
+@media (max-width: 850px) {
+
+  .page {
+    padding: 25px 15px;
+  }
+
+  .showcase {
+    display: none;
+  }
+
+  .login-section {
+    width: 100%;
+    max-width: 390px;
+  }
+
+  .login-card {
+    padding: 35px 25px;
+  }
+
+  .mobile-logo {
+    display: block;
+    font-size: 37px;
+    color: #833ab4;
+    margin-bottom: 30px;
+    letter-spacing: -2px;
+  }
 }
 
-.post img {
-  display: block;
-  width: 100%;
-  max-height: 550px;
-  object-fit: cover;
-}
-
-.post button {
-  border: none;
-  background: white;
-  font-size: 17px;
-  padding: 12px 0;
-}
-
-@media(max-width: 480px) {
-  .homepage {
-    margin-top: 10px;
+@media (max-width: 400px) {
+  .login-card {
+    padding: 30px 18px;
   }
 }
