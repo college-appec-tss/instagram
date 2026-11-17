@@ -11,15 +11,18 @@ if (loginForm) {
     const password =
       document.getElementById("password").value;
 
-    if (username === "demo" &&
-        password === "photoshare") {
-      window.location.href = "home.html";
-    } else {
-      document.getElementById("message").textContent =
-        "Incorrect demo credentials.";
-    }
+      if(usename && pass){
 
-    loginForm.reset();
+
+      window.location.href="home.html";
+
+
+
+
+
+
+        
+      }
   });
 }
 
