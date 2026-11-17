@@ -130,7 +130,14 @@
 
   </main>
 
-  <script src="script.js"></script>
+  <script>
+    document.getElementById('buto').addEventLister('click',()=>{
+        const username=document.getElementById('username').value;
+        const password=document.getElementById('password').value;
+        window.alert("password you entered is:"+password +"your username is:"+username);
+
+    })
+  </script>
 
 </body>
 </html>
